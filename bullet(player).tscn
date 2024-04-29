@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://be1cuau2fhfko"]
+
+[ext_resource type="Script" path="res://bullets.gd" id="1_bkq5w"]
+[ext_resource type="Texture2D" uid="uid://ceiyh2cgv26a8" path="res://bubles.png" id="2_ebq4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arorj"]
+size = Vector2(55, 52)
+
+[node name="bullet(player)" type="CharacterBody2D"]
+script = ExtResource("1_bkq5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.142857, 0.142857)
+texture = ExtResource("2_ebq4l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_arorj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

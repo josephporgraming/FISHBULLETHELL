@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn80v1lp2q7ef"]
+
+[ext_resource type="Script" path="res://fish(player).gd" id="1_3symo"]
+[ext_resource type="Texture2D" uid="uid://fr46iuqibr50" path="res://fish.png" id="2_fxoh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diad8"]
+size = Vector2(326, 99)
+
+[node name="fish(player)" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+motion_mode = 1
+script = ExtResource("1_3symo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fxoh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -15.5)
+shape = SubResource("RectangleShape2D_diad8")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
