@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crk858mrawer4"]
+
+[ext_resource type="Script" path="res://sharkScript.gd" id="1_3as2v"]
+[ext_resource type="Texture2D" uid="uid://b3tp0pl2taup6" path="res://shark.png" id="2_5oigg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grhfx"]
+size = Vector2(168, 61)
+
+[node name="shark" type="CharacterBody2D"]
+script = ExtResource("1_3as2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 15)
+shape = SubResource("RectangleShape2D_grhfx")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, 18)
+texture = ExtResource("2_5oigg")

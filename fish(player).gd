@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 1000.0
+const SPEED = 4000
 var bullet_sceen = preload("res://bullet(player).tscn")
 var bullet = bullet_sceen.instantiate()
 # Get the gravity from the project settings to be synced with RigidBody nodes.
