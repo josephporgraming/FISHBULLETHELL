@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0maf7yyd0plg"]
+
+[ext_resource type="Script" path="res://User Interface.gd" id="1_73owt"]
+[ext_resource type="Texture2D" uid="uid://dq1x0347fm7f8" path="res://FIshBulletHEllthumnail.png" id="2_ygs60"]
+
+[node name="main Menue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73owt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0581597
+anchor_top = 0.0555556
+anchor_right = 0.0581597
+anchor_bottom = 0.0555556
+offset_left = 411.0
+offset_top = 358.0
+offset_right = 463.0
+offset_bottom = 424.0
+scale = Vector2(2.68, 2.2)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+text_overrun_behavior = 4
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="FIshBulletHEllthumnail" type="Sprite2D" parent="."]
+position = Vector2(558, 192)
+scale = Vector2(0.799999, 0.799999)
+texture = ExtResource("2_ygs60")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -7,9 +7,7 @@
 
 [node name="world" type="Node2D"]
 
-[node name="shark" parent="." instance=ExtResource("1_m2v0o")]
-
-[node name="fish(player)" parent="." instance=ExtResource("1_tneir")]
+[node name="fish(player)" parent="." groups=["Player"] instance=ExtResource("1_tneir")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1.61703, 0.82082)
@@ -19,3 +17,5 @@ enabled = false
 script = ExtResource("2_f8rru")
 
 [node name="game_ui" parent="." instance=ExtResource("3_726wm")]
+
+[node name="shark" parent="." instance=ExtResource("1_m2v0o")]

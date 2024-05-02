@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grhfx"]
 size = Vector2(168, 61)
 
-[node name="shark" type="CharacterBody2D"]
+[node name="shark" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_3as2v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
 position = Vector2(9, 15)
 shape = SubResource("RectangleShape2D_grhfx")
 disabled = true

@@ -22,3 +22,7 @@ func _physics_process(delta):
 		bullet.rotation = rotation
 func _on_timer_timeout():
 	get_parent().remove_child(bullet)
+
+func _on_hit_box_area_entered(area):
+	if area.has_method("enemy"):
+		print("gg")

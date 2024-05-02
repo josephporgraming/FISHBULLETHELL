@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fr46iuqibr50" path="res://fish.png" id="2_fxoh4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diad8"]
-size = Vector2(326, 99)
+size = Vector2(454, 73.4929)
 
 [node name="fish(player)" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -15,8 +15,16 @@ script = ExtResource("1_3symo")
 texture = ExtResource("2_fxoh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -15.5)
+position = Vector2(2, -31)
 shape = SubResource("RectangleShape2D_diad8")
+
+[node name="hit box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit box" groups=["player"]]
+position = Vector2(0, -4)
+scale = Vector2(0.240225, -1.50044)
+shape = SubResource("RectangleShape2D_diad8")
+disabled = true
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -25,4 +33,5 @@ offset_bottom = 23.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+[connection signal="area_entered" from="hit box" to="." method="_on_hit_box_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
