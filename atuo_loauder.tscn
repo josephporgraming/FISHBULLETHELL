@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://uayyok6bb2a7"]
+
+[ext_resource type="Script" path="res://globalscript.gd" id="1_hslyn"]
+
+[node name="atuo loauder" type="Node2D"]
+script = ExtResource("1_hslyn")
+
+[node name="loading down" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="loading down" to="." method="_on_timer_timeout"]

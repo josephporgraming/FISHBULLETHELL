@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 5
+@export var speed = 3.5
 var player_pos
 var target_pos
 @onready var player = get_parent().get_node("fish(player)")
@@ -15,4 +15,9 @@ func _physics_process(delta):
 	target_pos = (player_pos - position).normalized()
 	position += target_pos * speed
 	look_at(player_pos)
-	move_and_slide()
+
+
+func _on_area_2d_body_entered(body):
+	print('LOL')
+	if body.is_in_group("player"):
+		Globalscript.drain_health()

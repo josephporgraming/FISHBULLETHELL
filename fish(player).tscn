@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diad8"]
 size = Vector2(454, 73.4929)
 
-[node name="fish(player)" type="CharacterBody2D"]
+[node name="fish(player)" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.25, 0.25)
 motion_mode = 1
 script = ExtResource("1_3symo")
@@ -18,9 +18,9 @@ texture = ExtResource("2_fxoh4")
 position = Vector2(2, -31)
 shape = SubResource("RectangleShape2D_diad8")
 
-[node name="hit box" type="Area2D" parent="."]
+[node name="hit box" type="Area2D" parent="." groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit box" groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit box"]
 position = Vector2(0, -4)
 scale = Vector2(0.240225, -1.50044)
 shape = SubResource("RectangleShape2D_diad8")

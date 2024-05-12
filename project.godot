@@ -11,9 +11,22 @@ config_version=5
 [application]
 
 config/name="Untitled fish game"
+config/description="FISH BULLET HELL"
 run/main_scene="res://main_menue.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.466667, 0.419608, 0.819608, 1)
+boot_splash/image="res://FIshBulletHEllthumnail.png"
+config/icon="res://FIshBulletHEllthumnail.png"
+
+[autoload]
+
+AtuoLoauder="*res://atuo_loauder.tscn"
+Globalscript="*res://globalscript.gd"
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [input]
 
