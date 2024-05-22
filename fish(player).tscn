@@ -1,21 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn80v1lp2q7ef"]
+[gd_scene load_steps=8 format=3 uid="uid://cn80v1lp2q7ef"]
 
 [ext_resource type="Script" path="res://fish(player).gd" id="1_3symo"]
-[ext_resource type="Texture2D" uid="uid://fr46iuqibr50" path="res://fish.png" id="2_fxoh4"]
+[ext_resource type="Texture2D" uid="uid://bopwqknwwie1n" path="res://Fish swim animation/frame0000.png" id="2_4nvdq"]
+[ext_resource type="Texture2D" uid="uid://csc1glvvc7bwm" path="res://Fish swim animation/frame0001.png" id="3_3nxdl"]
+[ext_resource type="Texture2D" uid="uid://bcngxtgsca8fy" path="res://Fish swim animation/frame0002.png" id="4_ad28u"]
+[ext_resource type="Texture2D" uid="uid://sl8x1s7kg44t" path="res://Fish swim animation/frame0003.png" id="5_ixooi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epk4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4nvdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3nxdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ad28u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ixooi")
+}],
+"loop": true,
+"name": &"default swim",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diad8"]
-size = Vector2(454, 73.4929)
+size = Vector2(465, 115.746)
 
 [node name="fish(player)" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.25, 0.25)
 motion_mode = 1
 script = ExtResource("1_3symo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_fxoh4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_epk4r")
+animation = &"default swim"
+autoplay = "default swim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -31)
+position = Vector2(7.5, -9.87322)
 shape = SubResource("RectangleShape2D_diad8")
 
 [node name="hit box" type="Area2D" parent="." groups=["player"]]

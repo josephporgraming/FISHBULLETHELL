@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjao7y5dhn8or"]
+[gd_scene load_steps=8 format=3 uid="uid://cjao7y5dhn8or"]
 
 [ext_resource type="Texture2D" uid="uid://dvde53gp2c0dd" path="res://backround.png" id="1_dlhk4"]
+[ext_resource type="Script" path="res://world.gd" id="1_jtekm"]
 [ext_resource type="PackedScene" uid="uid://crk858mrawer4" path="res://shark.tscn" id="1_m2v0o"]
 [ext_resource type="PackedScene" uid="uid://cn80v1lp2q7ef" path="res://fish(player).tscn" id="1_tneir"]
 [ext_resource type="Script" path="res://point sytem.gd" id="2_f8rru"]
 [ext_resource type="PackedScene" uid="uid://cs1ro4rdn06r2" path="res://game_ui.tscn" id="3_726wm"]
+[ext_resource type="PackedScene" uid="uid://dy5g5wqp7r58t" path="res://health_container.tscn" id="5_miyww"]
 
 [node name="world" type="Node2D"]
 position = Vector2(34, 15)
+script = ExtResource("1_jtekm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(561, 397)
@@ -19,7 +22,23 @@ position = Vector2(-219, 358)
 [node name="point sytem" type="Node2D" parent="."]
 script = ExtResource("2_f8rru")
 
-[node name="game_ui" parent="." instance=ExtResource("3_726wm")]
-
 [node name="shark" parent="." instance=ExtResource("1_m2v0o")]
 position = Vector2(585, 320)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health container" parent="CanvasLayer" instance=ExtResource("5_miyww")]
+layout_direction = 2
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_right = 470.0
+grow_horizontal = 1
+scale = Vector2(0.44, 0.44)
+
+[node name="game_ui" parent="CanvasLayer" instance=ExtResource("3_726wm")]
+offset_left = 828.0
+offset_top = -5.0
+offset_right = 828.0
+offset_bottom = -5.0

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 1000
 var bullet_sceen = preload("res://bullet(player).tscn")
 var bullet = bullet_sceen.instantiate()

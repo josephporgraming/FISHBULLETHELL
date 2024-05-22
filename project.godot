@@ -21,7 +21,6 @@ config/icon="res://FIshBulletHEllthumnail.png"
 [autoload]
 
 AtuoLoauder="*res://atuo_loauder.tscn"
-Globalscript="*res://globalscript.gd"
 
 [display]
 

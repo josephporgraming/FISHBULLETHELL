@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bseyb2jysnc6v"]
+
+[ext_resource type="Texture2D" uid="uid://d2wk05smscn62" path="res://lives/1 lives.png" id="1_5q6pb"]
+[ext_resource type="Script" path="res://panel.gd" id="1_d63qu"]
+
+[node name="hook1" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_top = 2.0
+offset_right = 274.0
+offset_bottom = 286.0
+scale = Vector2(0.48, 0.48)
+script = ExtResource("1_d63qu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(443, 144)
+texture = ExtResource("1_5q6pb")
